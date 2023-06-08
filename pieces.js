@@ -7,7 +7,7 @@ let chessData = []
 let filenames = []
 let boardData = []
 
-fs.createReadStream(libFolder+'/test/_annotations.csv')
+fs.createReadStream(libFolder+'/train/_annotations.csv')
     .pipe(csv())
     .on('data', (data) => {
         let csvFilename = data.filename
@@ -40,9 +40,9 @@ fs.createReadStream(libFolder+'/test/_annotations.csv')
                         case "1":
                             //nothing
                             pieceType = "nothing"
-                            sharp('./2D-Chessboard-and-Chess-Pieces-4/test/'+filename)
+                            sharp('./2D-Chessboard-and-Chess-Pieces-4/train/'+filename)
                                 .extract({left:leftMargin, top:topMargin, width:52, height:52})
-                                .toFile('./testpieces/'+ pieceType + "/" + nothing + '.jpg', function(err) {
+                                .toFile('./trainpieces/'+ pieceType + "/" + nothing + '.jpg', function(err) {
                                     if(err) console.log(err)
                                 })
                             nothing++
@@ -50,9 +50,9 @@ fs.createReadStream(libFolder+'/test/_annotations.csv')
                         case "R":
                             //white rook
                             pieceType = "whiterook"
-                            sharp('./2D-Chessboard-and-Chess-Pieces-4/test/'+filename)
+                            sharp('./2D-Chessboard-and-Chess-Pieces-4/train/'+filename)
                                 .extract({left:leftMargin, top:topMargin, width:52, height:52})
-                                .toFile('./testpieces/'+ pieceType + "/" + whiteRook + '.jpg', function(err) {
+                                .toFile('./trainpieces/'+ pieceType + "/" + whiteRook + '.jpg', function(err) {
                                     if(err) console.log(err)
                                 })
                             whiteRook++
@@ -60,9 +60,9 @@ fs.createReadStream(libFolder+'/test/_annotations.csv')
                         case "r":
                             //black rook
                             pieceType = "blackrook"
-                            sharp('./2D-Chessboard-and-Chess-Pieces-4/test/'+filename)
+                            sharp('./2D-Chessboard-and-Chess-Pieces-4/train/'+filename)
                                 .extract({left:leftMargin, top:topMargin, width:52, height:52})
-                                .toFile('./testpieces/'+ pieceType + "/" + blackRook + '.jpg', function(err) {
+                                .toFile('./trainpieces/'+ pieceType + "/" + blackRook + '.jpg', function(err) {
                                     if(err) console.log(err)
                                 })
                             blackRook++
@@ -70,9 +70,9 @@ fs.createReadStream(libFolder+'/test/_annotations.csv')
                         case "N":
                             //white knight
                             pieceType = "whiteknight"
-                            sharp('./2D-Chessboard-and-Chess-Pieces-4/test/'+filename)
+                            sharp('./2D-Chessboard-and-Chess-Pieces-4/train/'+filename)
                                 .extract({left:leftMargin, top:topMargin, width:52, height:52})
-                                .toFile('./testpieces/'+ pieceType + "/" + whiteKnight + '.jpg', function(err) {
+                                .toFile('./trainpieces/'+ pieceType + "/" + whiteKnight + '.jpg', function(err) {
                                     if(err) console.log(err)
                                 })
                             whiteKnight++
@@ -80,9 +80,9 @@ fs.createReadStream(libFolder+'/test/_annotations.csv')
                         case "n":
                             //black knight
                             pieceType = "blackknight"
-                            sharp('./2D-Chessboard-and-Chess-Pieces-4/test/'+filename)
+                            sharp('./2D-Chessboard-and-Chess-Pieces-4/train/'+filename)
                                 .extract({left:leftMargin, top:topMargin, width:52, height:52})
-                                .toFile('./testpieces/'+ pieceType + "/" + blackKnight + '.jpg', function(err) {
+                                .toFile('./trainpieces/'+ pieceType + "/" + blackKnight + '.jpg', function(err) {
                                     if(err) console.log(err)
                                 })
                             blackKnight++
@@ -90,9 +90,9 @@ fs.createReadStream(libFolder+'/test/_annotations.csv')
                         case "B":
                             //white bishop
                             pieceType = "whitebishop"
-                            sharp('./2D-Chessboard-and-Chess-Pieces-4/test/'+filename)
+                            sharp('./2D-Chessboard-and-Chess-Pieces-4/train/'+filename)
                                 .extract({left:leftMargin, top:topMargin, width:52, height:52})
-                                .toFile('./testpieces/'+ pieceType + "/" + whiteBishop + '.jpg', function(err) {
+                                .toFile('./trainpieces/'+ pieceType + "/" + whiteBishop + '.jpg', function(err) {
                                     if(err) console.log(err)
                                 })
                             whiteBishop++
@@ -100,9 +100,9 @@ fs.createReadStream(libFolder+'/test/_annotations.csv')
                         case "b":
                             //black bishop
                             pieceType = "blackbishop"
-                            sharp('./2D-Chessboard-and-Chess-Pieces-4/test/'+filename)
+                            sharp('./2D-Chessboard-and-Chess-Pieces-4/train/'+filename)
                                 .extract({left:leftMargin, top:topMargin, width:52, height:52})
-                                .toFile('./testpieces/'+ pieceType + "/" + blackBishop + '.jpg', function(err) {
+                                .toFile('./trainpieces/'+ pieceType + "/" + blackBishop + '.jpg', function(err) {
                                     if(err) console.log(err)
                                 })
                             blackBishop++
@@ -110,9 +110,9 @@ fs.createReadStream(libFolder+'/test/_annotations.csv')
                         case "Q":
                             //white queen
                             pieceType = "whitequeen"
-                            sharp('./2D-Chessboard-and-Chess-Pieces-4/test/'+filename)
+                            sharp('./2D-Chessboard-and-Chess-Pieces-4/train/'+filename)
                                 .extract({left:leftMargin, top:topMargin, width:52, height:52})
-                                .toFile('./testpieces/'+ pieceType + "/" + whiteQueen + '.jpg', function(err) {
+                                .toFile('./trainpieces/'+ pieceType + "/" + whiteQueen + '.jpg', function(err) {
                                     if(err) console.log(err)
                                 })
                             whiteQueen++
@@ -120,9 +120,9 @@ fs.createReadStream(libFolder+'/test/_annotations.csv')
                         case "q":
                             //black queen
                             pieceType = "blackqueen"
-                            sharp('./2D-Chessboard-and-Chess-Pieces-4/test/'+filename)
+                            sharp('./2D-Chessboard-and-Chess-Pieces-4/train/'+filename)
                                 .extract({left:leftMargin, top:topMargin, width:52, height:52})
-                                .toFile('./testpieces/'+ pieceType + "/" + blackQueen + '.jpg', function(err) {
+                                .toFile('./trainpieces/'+ pieceType + "/" + blackQueen + '.jpg', function(err) {
                                     if(err) console.log(err)
                                 })
                             blackQueen++
@@ -130,9 +130,9 @@ fs.createReadStream(libFolder+'/test/_annotations.csv')
                         case "P":
                             //white pawn
                             pieceType = "whitepawn"
-                            sharp('./2D-Chessboard-and-Chess-Pieces-4/test/'+filename)
+                            sharp('./2D-Chessboard-and-Chess-Pieces-4/train/'+filename)
                                 .extract({left:leftMargin, top:topMargin, width:52, height:52})
-                                .toFile('./testpieces/'+ pieceType + "/" + whitePawn + '.jpg', function(err) {
+                                .toFile('./trainpieces/'+ pieceType + "/" + whitePawn + '.jpg', function(err) {
                                     if(err) console.log(err)
                                 })
                             whitePawn++
@@ -140,9 +140,9 @@ fs.createReadStream(libFolder+'/test/_annotations.csv')
                         case "p":
                             //black pawn
                             pieceType = "blackpawn"
-                            sharp('./2D-Chessboard-and-Chess-Pieces-4/test/'+filename)
+                            sharp('./2D-Chessboard-and-Chess-Pieces-4/train/'+filename)
                                 .extract({left:leftMargin, top:topMargin, width:52, height:52})
-                                .toFile('./testpieces/'+ pieceType + "/" + blackPawn + '.jpg', function(err) {
+                                .toFile('./trainpieces/'+ pieceType + "/" + blackPawn + '.jpg', function(err) {
                                     if(err) console.log(err)
                                 })
                             blackPawn++
@@ -150,9 +150,9 @@ fs.createReadStream(libFolder+'/test/_annotations.csv')
                         case "K":
                             //white king
                             pieceType = "whiteking"
-                            sharp('./2D-Chessboard-and-Chess-Pieces-4/test/'+filename)
+                            sharp('./2D-Chessboard-and-Chess-Pieces-4/train/'+filename)
                                 .extract({left:leftMargin, top:topMargin, width:52, height:52})
-                                .toFile('./testpieces/'+ pieceType + "/" + whiteKing + '.jpg', function(err) {
+                                .toFile('./trainpieces/'+ pieceType + "/" + whiteKing + '.jpg', function(err) {
                                     if(err) console.log(err)
                                 })
                             whiteKing++
@@ -160,9 +160,9 @@ fs.createReadStream(libFolder+'/test/_annotations.csv')
                         case "k":
                             //black king
                             pieceType = "blackking"
-                            sharp('./2D-Chessboard-and-Chess-Pieces-4/test/'+filename)
+                            sharp('./2D-Chessboard-and-Chess-Pieces-4/train/'+filename)
                                 .extract({left:leftMargin, top:topMargin, width:52, height:52})
-                                .toFile('./testpieces/'+ pieceType + "/" + blackKing + '.jpg', function(err) {
+                                .toFile('./trainpieces/'+ pieceType + "/" + blackKing + '.jpg', function(err) {
                                     if(err) console.log(err)
                                 })
                             blackKing++
@@ -174,6 +174,159 @@ fs.createReadStream(libFolder+'/test/_annotations.csv')
             }
         }
 
+        nothing=0, whitePawn=0, blackPawn=0, whiteBishop=0, blackBishop=0, whiteKnight=0, blackKnight=0, whiteKing=0, blackKing=0, whiteQueen=0, blackQueen=0, whiteRook=0, blackRook = 0
+
+        for(let i=750; i<850; i++) {
+            let filename = chessData[i][0]
+            let gameData = chessData[i][1].split('-')
+            // console.log(filename, gameData)
+
+            let leftMargin = 0
+            let topMargin = 0
+
+
+            for(let x=0; x<8; x++) {
+                leftMargin=0
+                for(let y=0; y<8; y++) {
+                    let pieceType = ""
+                    // console.log("leftMargin ", leftMargin, "topMargin ", topMargin, "gameData ", gameData[x][y])
+                    switch (gameData[x][y]) {
+                        case "1":
+                            //nothing
+                            pieceType = "nothing"
+                            sharp('./2D-Chessboard-and-Chess-Pieces-4/train/'+filename)
+                                .extract({left:leftMargin, top:topMargin, width:52, height:52})
+                                .toFile('./validpieces/'+ pieceType + "/" + nothing + '.jpg', function(err) {
+                                    if(err) console.log(err)
+                                })
+                            nothing++
+                            break
+                        case "R":
+                            //white rook
+                            pieceType = "whiterook"
+                            sharp('./2D-Chessboard-and-Chess-Pieces-4/train/'+filename)
+                                .extract({left:leftMargin, top:topMargin, width:52, height:52})
+                                .toFile('./validpieces/'+ pieceType + "/" + whiteRook + '.jpg', function(err) {
+                                    if(err) console.log(err)
+                                })
+                            whiteRook++
+                            break
+                        case "r":
+                            //black rook
+                            pieceType = "blackrook"
+                            sharp('./2D-Chessboard-and-Chess-Pieces-4/train/'+filename)
+                                .extract({left:leftMargin, top:topMargin, width:52, height:52})
+                                .toFile('./validpieces/'+ pieceType + "/" + blackRook + '.jpg', function(err) {
+                                    if(err) console.log(err)
+                                })
+                            blackRook++
+                            break
+                        case "N":
+                            //white knight
+                            pieceType = "whiteknight"
+                            sharp('./2D-Chessboard-and-Chess-Pieces-4/train/'+filename)
+                                .extract({left:leftMargin, top:topMargin, width:52, height:52})
+                                .toFile('./validpieces/'+ pieceType + "/" + whiteKnight + '.jpg', function(err) {
+                                    if(err) console.log(err)
+                                })
+                            whiteKnight++
+                            break
+                        case "n":
+                            //black knight
+                            pieceType = "blackknight"
+                            sharp('./2D-Chessboard-and-Chess-Pieces-4/train/'+filename)
+                                .extract({left:leftMargin, top:topMargin, width:52, height:52})
+                                .toFile('./validpieces/'+ pieceType + "/" + blackKnight + '.jpg', function(err) {
+                                    if(err) console.log(err)
+                                })
+                            blackKnight++
+                            break
+                        case "B":
+                            //white bishop
+                            pieceType = "whitebishop"
+                            sharp('./2D-Chessboard-and-Chess-Pieces-4/train/'+filename)
+                                .extract({left:leftMargin, top:topMargin, width:52, height:52})
+                                .toFile('./validpieces/'+ pieceType + "/" + whiteBishop + '.jpg', function(err) {
+                                    if(err) console.log(err)
+                                })
+                            whiteBishop++
+                            break
+                        case "b":
+                            //black bishop
+                            pieceType = "blackbishop"
+                            sharp('./2D-Chessboard-and-Chess-Pieces-4/train/'+filename)
+                                .extract({left:leftMargin, top:topMargin, width:52, height:52})
+                                .toFile('./validpieces/'+ pieceType + "/" + blackBishop + '.jpg', function(err) {
+                                    if(err) console.log(err)
+                                })
+                            blackBishop++
+                            break
+                        case "Q":
+                            //white queen
+                            pieceType = "whitequeen"
+                            sharp('./2D-Chessboard-and-Chess-Pieces-4/train/'+filename)
+                                .extract({left:leftMargin, top:topMargin, width:52, height:52})
+                                .toFile('./validpieces/'+ pieceType + "/" + whiteQueen + '.jpg', function(err) {
+                                    if(err) console.log(err)
+                                })
+                            whiteQueen++
+                            break
+                        case "q":
+                            //black queen
+                            pieceType = "blackqueen"
+                            sharp('./2D-Chessboard-and-Chess-Pieces-4/train/'+filename)
+                                .extract({left:leftMargin, top:topMargin, width:52, height:52})
+                                .toFile('./validpieces/'+ pieceType + "/" + blackQueen + '.jpg', function(err) {
+                                    if(err) console.log(err)
+                                })
+                            blackQueen++
+                            break
+                        case "P":
+                            //white pawn
+                            pieceType = "whitepawn"
+                            sharp('./2D-Chessboard-and-Chess-Pieces-4/train/'+filename)
+                                .extract({left:leftMargin, top:topMargin, width:52, height:52})
+                                .toFile('./validpieces/'+ pieceType + "/" + whitePawn + '.jpg', function(err) {
+                                    if(err) console.log(err)
+                                })
+                            whitePawn++
+                            break
+                        case "p":
+                            //black pawn
+                            pieceType = "blackpawn"
+                            sharp('./2D-Chessboard-and-Chess-Pieces-4/train/'+filename)
+                                .extract({left:leftMargin, top:topMargin, width:52, height:52})
+                                .toFile('./validpieces/'+ pieceType + "/" + blackPawn + '.jpg', function(err) {
+                                    if(err) console.log(err)
+                                })
+                            blackPawn++
+                            break
+                        case "K":
+                            //white king
+                            pieceType = "whiteking"
+                            sharp('./2D-Chessboard-and-Chess-Pieces-4/train/'+filename)
+                                .extract({left:leftMargin, top:topMargin, width:52, height:52})
+                                .toFile('./validpieces/'+ pieceType + "/" + whiteKing + '.jpg', function(err) {
+                                    if(err) console.log(err)
+                                })
+                            whiteKing++
+                            break
+                        case "k":
+                            //black king
+                            pieceType = "blackking"
+                            sharp('./2D-Chessboard-and-Chess-Pieces-4/train/'+filename)
+                                .extract({left:leftMargin, top:topMargin, width:52, height:52})
+                                .toFile('./validpieces/'+ pieceType + "/" + blackKing + '.jpg', function(err) {
+                                    if(err) console.log(err)
+                                })
+                            blackKing++
+                            break
+                    }
+                    leftMargin += 52
+                }
+                topMargin += 52
+            }
+        }
         nothing=0, whitePawn=0, blackPawn=0, whiteBishop=0, blackBishop=0, whiteKnight=0, blackKnight=0, whiteKing=0, blackKing=0, whiteQueen=0, blackQueen=0, whiteRook=0, blackRook = 0
 
         for(let i=500; i<750; i++) {
@@ -194,9 +347,9 @@ fs.createReadStream(libFolder+'/test/_annotations.csv')
                         case "1":
                             //nothing
                             pieceType = "nothing"
-                            sharp('./2D-Chessboard-and-Chess-Pieces-4/test/'+filename)
+                            sharp('./2D-Chessboard-and-Chess-Pieces-4/train/'+filename)
                                 .extract({left:leftMargin, top:topMargin, width:52, height:52})
-                                .toFile('./validpieces/'+ pieceType + "/" + nothing + '.jpg', function(err) {
+                                .toFile('./testpieces/'+ pieceType + "/" + nothing + '.jpg', function(err) {
                                     if(err) console.log(err)
                                 })
                             nothing++
@@ -204,9 +357,9 @@ fs.createReadStream(libFolder+'/test/_annotations.csv')
                         case "R":
                             //white rook
                             pieceType = "whiterook"
-                            sharp('./2D-Chessboard-and-Chess-Pieces-4/test/'+filename)
+                            sharp('./2D-Chessboard-and-Chess-Pieces-4/train/'+filename)
                                 .extract({left:leftMargin, top:topMargin, width:52, height:52})
-                                .toFile('./validpieces/'+ pieceType + "/" + whiteRook + '.jpg', function(err) {
+                                .toFile('./testpieces/'+ pieceType + "/" + whiteRook + '.jpg', function(err) {
                                     if(err) console.log(err)
                                 })
                             whiteRook++
@@ -214,9 +367,9 @@ fs.createReadStream(libFolder+'/test/_annotations.csv')
                         case "r":
                             //black rook
                             pieceType = "blackrook"
-                            sharp('./2D-Chessboard-and-Chess-Pieces-4/test/'+filename)
+                            sharp('./2D-Chessboard-and-Chess-Pieces-4/train/'+filename)
                                 .extract({left:leftMargin, top:topMargin, width:52, height:52})
-                                .toFile('./validpieces/'+ pieceType + "/" + blackRook + '.jpg', function(err) {
+                                .toFile('./testpieces/'+ pieceType + "/" + blackRook + '.jpg', function(err) {
                                     if(err) console.log(err)
                                 })
                             blackRook++
@@ -224,9 +377,9 @@ fs.createReadStream(libFolder+'/test/_annotations.csv')
                         case "N":
                             //white knight
                             pieceType = "whiteknight"
-                            sharp('./2D-Chessboard-and-Chess-Pieces-4/test/'+filename)
+                            sharp('./2D-Chessboard-and-Chess-Pieces-4/train/'+filename)
                                 .extract({left:leftMargin, top:topMargin, width:52, height:52})
-                                .toFile('./validpieces/'+ pieceType + "/" + whiteKnight + '.jpg', function(err) {
+                                .toFile('./testpieces/'+ pieceType + "/" + whiteKnight + '.jpg', function(err) {
                                     if(err) console.log(err)
                                 })
                             whiteKnight++
@@ -234,9 +387,9 @@ fs.createReadStream(libFolder+'/test/_annotations.csv')
                         case "n":
                             //black knight
                             pieceType = "blackknight"
-                            sharp('./2D-Chessboard-and-Chess-Pieces-4/test/'+filename)
+                            sharp('./2D-Chessboard-and-Chess-Pieces-4/train/'+filename)
                                 .extract({left:leftMargin, top:topMargin, width:52, height:52})
-                                .toFile('./validpieces/'+ pieceType + "/" + blackKnight + '.jpg', function(err) {
+                                .toFile('./testpieces/'+ pieceType + "/" + blackKnight + '.jpg', function(err) {
                                     if(err) console.log(err)
                                 })
                             blackKnight++
@@ -244,9 +397,9 @@ fs.createReadStream(libFolder+'/test/_annotations.csv')
                         case "B":
                             //white bishop
                             pieceType = "whitebishop"
-                            sharp('./2D-Chessboard-and-Chess-Pieces-4/test/'+filename)
+                            sharp('./2D-Chessboard-and-Chess-Pieces-4/train/'+filename)
                                 .extract({left:leftMargin, top:topMargin, width:52, height:52})
-                                .toFile('./validpieces/'+ pieceType + "/" + whiteBishop + '.jpg', function(err) {
+                                .toFile('./testpieces/'+ pieceType + "/" + whiteBishop + '.jpg', function(err) {
                                     if(err) console.log(err)
                                 })
                             whiteBishop++
@@ -254,9 +407,9 @@ fs.createReadStream(libFolder+'/test/_annotations.csv')
                         case "b":
                             //black bishop
                             pieceType = "blackbishop"
-                            sharp('./2D-Chessboard-and-Chess-Pieces-4/test/'+filename)
+                            sharp('./2D-Chessboard-and-Chess-Pieces-4/train/'+filename)
                                 .extract({left:leftMargin, top:topMargin, width:52, height:52})
-                                .toFile('./validpieces/'+ pieceType + "/" + blackBishop + '.jpg', function(err) {
+                                .toFile('./testpieces/'+ pieceType + "/" + blackBishop + '.jpg', function(err) {
                                     if(err) console.log(err)
                                 })
                             blackBishop++
@@ -264,9 +417,9 @@ fs.createReadStream(libFolder+'/test/_annotations.csv')
                         case "Q":
                             //white queen
                             pieceType = "whitequeen"
-                            sharp('./2D-Chessboard-and-Chess-Pieces-4/test/'+filename)
+                            sharp('./2D-Chessboard-and-Chess-Pieces-4/train/'+filename)
                                 .extract({left:leftMargin, top:topMargin, width:52, height:52})
-                                .toFile('./validpieces/'+ pieceType + "/" + whiteQueen + '.jpg', function(err) {
+                                .toFile('./testpieces/'+ pieceType + "/" + whiteQueen + '.jpg', function(err) {
                                     if(err) console.log(err)
                                 })
                             whiteQueen++
@@ -274,9 +427,9 @@ fs.createReadStream(libFolder+'/test/_annotations.csv')
                         case "q":
                             //black queen
                             pieceType = "blackqueen"
-                            sharp('./2D-Chessboard-and-Chess-Pieces-4/test/'+filename)
+                            sharp('./2D-Chessboard-and-Chess-Pieces-4/train/'+filename)
                                 .extract({left:leftMargin, top:topMargin, width:52, height:52})
-                                .toFile('./validpieces/'+ pieceType + "/" + blackQueen + '.jpg', function(err) {
+                                .toFile('./testpieces/'+ pieceType + "/" + blackQueen + '.jpg', function(err) {
                                     if(err) console.log(err)
                                 })
                             blackQueen++
@@ -284,9 +437,9 @@ fs.createReadStream(libFolder+'/test/_annotations.csv')
                         case "P":
                             //white pawn
                             pieceType = "whitepawn"
-                            sharp('./2D-Chessboard-and-Chess-Pieces-4/test/'+filename)
+                            sharp('./2D-Chessboard-and-Chess-Pieces-4/train/'+filename)
                                 .extract({left:leftMargin, top:topMargin, width:52, height:52})
-                                .toFile('./validpieces/'+ pieceType + "/" + whitePawn + '.jpg', function(err) {
+                                .toFile('./testpieces/'+ pieceType + "/" + whitePawn + '.jpg', function(err) {
                                     if(err) console.log(err)
                                 })
                             whitePawn++
@@ -294,9 +447,9 @@ fs.createReadStream(libFolder+'/test/_annotations.csv')
                         case "p":
                             //black pawn
                             pieceType = "blackpawn"
-                            sharp('./2D-Chessboard-and-Chess-Pieces-4/test/'+filename)
+                            sharp('./2D-Chessboard-and-Chess-Pieces-4/train/'+filename)
                                 .extract({left:leftMargin, top:topMargin, width:52, height:52})
-                                .toFile('./validpieces/'+ pieceType + "/" + blackPawn + '.jpg', function(err) {
+                                .toFile('./testpieces/'+ pieceType + "/" + blackPawn + '.jpg', function(err) {
                                     if(err) console.log(err)
                                 })
                             blackPawn++
@@ -304,9 +457,9 @@ fs.createReadStream(libFolder+'/test/_annotations.csv')
                         case "K":
                             //white king
                             pieceType = "whiteking"
-                            sharp('./2D-Chessboard-and-Chess-Pieces-4/test/'+filename)
+                            sharp('./2D-Chessboard-and-Chess-Pieces-4/train/'+filename)
                                 .extract({left:leftMargin, top:topMargin, width:52, height:52})
-                                .toFile('./validpieces/'+ pieceType + "/" + whiteKing + '.jpg', function(err) {
+                                .toFile('./testpieces/'+ pieceType + "/" + whiteKing + '.jpg', function(err) {
                                     if(err) console.log(err)
                                 })
                             whiteKing++
@@ -314,9 +467,9 @@ fs.createReadStream(libFolder+'/test/_annotations.csv')
                         case "k":
                             //black king
                             pieceType = "blackking"
-                            sharp('./2D-Chessboard-and-Chess-Pieces-4/test/'+filename)
+                            sharp('./2D-Chessboard-and-Chess-Pieces-4/train/'+filename)
                                 .extract({left:leftMargin, top:topMargin, width:52, height:52})
-                                .toFile('./validpieces/'+ pieceType + "/" + blackKing + '.jpg', function(err) {
+                                .toFile('./testpieces/'+ pieceType + "/" + blackKing + '.jpg', function(err) {
                                     if(err) console.log(err)
                                 })
                             blackKing++
@@ -328,11 +481,3 @@ fs.createReadStream(libFolder+'/test/_annotations.csv')
             }
         }
     })
-
-// console.log(sharp(libFolder + '/test/' + randomImage).extract({left:0, top: 0, width:52, height:52}))
-// .toFile(randomImage)
-// sharp('./kangta.jpg')
-//     .extract({ left: 0, top: 0, width: 100, height: 100 })
-//     .toFile('./kangta.new.jpg', function (err) {
-//         if (err) console.log(err);
-//     })

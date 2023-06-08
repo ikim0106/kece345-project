@@ -2,3 +2,5 @@
 /node_modules
 # /testpieces
 # /validpieces
+/inferences
+model.pth
