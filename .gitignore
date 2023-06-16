@@ -3,4 +3,6 @@
 # /testpieces
 # /validpieces
 /inferences
-model.pth
+*.pth
+*.keras
+*.csv
