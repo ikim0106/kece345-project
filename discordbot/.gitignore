@@ -1,0 +1,11 @@
+#dependencies
+node_modules
+
+#authentication
+auth.json
+
+#vscode junk
+.vscode
+
+#cache
+/cache

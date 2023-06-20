@@ -1,0 +1,81 @@
+const commando = require('discord.js-commando')
+const fs = require('fs')
+const path = require('path')
+let modifiedPrintList = require('../../utils/printListModCount')
+
+class flagentries extends commando.Command {
+  constructor(client) {
+    super(client, {
+      name: 'flagentries',
+      group: 'leaderboard',
+      memberName: 'flagentries',
+      description: 'shows everyone\'s flag entries',
+    });
+  }
+
+  async run(message) {
+    let processedData=[]
+    let file = fs.readFileSync(path.resolve(__dirname, "../../userData.json"), 'utf-8')
+    if(file=='') message.reply("No leaderboard entries to show")
+    else{
+      let rawdata = JSON.parse(file)
+      // console.log(rawdata[0])
+      
+      for(let i=0; i<rawdata.length; i++) {
+        let someShit = []
+        
+        let moonDiscord = message.guild
+        let moonMember = await moonDiscord.members.fetch(rawdata[i][0])
+        let moonNickname = moonMember.nickname
+        if (moonNickname==null) {
+          moonNickname = moonMember.user.username
+        }
+        else {
+          moonNickname = moonNickname.split('|')[0].trim()
+          if (moonNickname==null) {
+            message.reply("you have the wrong nickname format pepelaf")
+          }
+        }
+        someShit.push(moonNickname)
+        
+        let totPts=0
+        for(let q =1; q<rawdata[i].length; q++) {
+          totPts+=parseInt(rawdata[i][q])
+        }
+        someShit.push(rawdata[i].length-1)
+        
+        // console.log(someShit)
+        processedData.push(someShit)
+      }
+
+      if(!message.member.roles.cache.has('877585031449677875') && !message.member.hasPermission("MANAGE_MESSAGES")){
+        message.reply("u dont have perms for this pepelaf")
+      } 
+      else {
+        let len = processedData.length
+        for(let i=0; i<len; i++) {
+          let min = i;
+          for(let j = i+1; j<len; j++) {
+            if(processedData[j][1] < processedData[min][1]) {
+              min = j;
+            }
+          }
+          
+          if(min!=i) {
+            let tmp = processedData[i]
+            processedData[i] = processedData[min]
+            processedData[min] = tmp
+          }
+        }
+        processedData.reverse()
+        
+        modifiedPrintList.printListModCount(message, processedData)
+        processedData=[]
+      }
+    }
+  }
+
+}
+  
+  module.exports = flagentries
+  

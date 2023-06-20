@@ -1,0 +1,29 @@
+{
+  "name": "tk69",
+  "version": "1.0.0",
+  "description": "source",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "main": "nodemon main"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ikim0106/tk69.git"
+  },
+  "author": "ikim0106",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ikim0106/tk69/issues"
+  },
+  "homepage": "https://github.com/ikim0106/tk69#readme",
+  "dependencies": {
+    "@discordjs/opus": "^0.8.0",
+    "@discordjs/voice": "^0.14.0",
+    "chess.js": "^1.0.0-beta.6",
+    "discord.js": "^14.7.1",
+    "ffmpeg-static": "^5.1.0",
+    "libsodium-wrappers": "^0.7.10",
+    "play-dl": "^1.9.6"
+  }
+}
